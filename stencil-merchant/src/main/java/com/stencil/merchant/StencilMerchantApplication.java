@@ -1,13 +1,13 @@
-package com.stencil.stencilshop;
+package com.stencil.merchant;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StencilShopApplication {
+public class StencilMerchantApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StencilShopApplication.class, args);
+        SpringApplication.run(StencilMerchantApplication.class, args);
     }
 
 }

@@ -21,7 +21,7 @@
         <module>stencil-security</module>
         <module>stencil-admin</module>
         <module>stencil-user</module>
-        <module>stencil-shop</module>
+        <module>stencil-merchant</module>
     </modules>
 
     <properties>
