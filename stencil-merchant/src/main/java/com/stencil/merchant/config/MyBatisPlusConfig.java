@@ -1,4 +1,4 @@
-package com.chen.stencil.user.config;
+package com.stencil.merchant.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -8,12 +8,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- * MyBatis相关配置
- */
 @Configuration
 @EnableTransactionManagement
-@MapperScan({"com.chen.stencil.mbg.mapper"})
+@MapperScan({"com.chen.stencil.mbg.mapper","com.stencil.merchant.dao"})
 public class MyBatisPlusConfig {
 
     @Bean
