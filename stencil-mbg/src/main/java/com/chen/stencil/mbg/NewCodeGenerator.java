@@ -14,7 +14,8 @@ public class NewCodeGenerator {
 
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
-        tables.add("z");
+        tables.add("merchant");
+        //tables.add("merchant");
 
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/ad", "root", "")
                 .globalConfig(builder -> {

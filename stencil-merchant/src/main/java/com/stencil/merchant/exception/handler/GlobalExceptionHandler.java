@@ -1,7 +1,7 @@
-package com.chen.stencil.common.exception.handler;
+package com.stencil.merchant.exception.handler;
 
-import com.chen.stencil.common.exception.ApiException;
 import com.chen.stencil.common.response.CommonResult;
+import com.stencil.merchant.exception.ApiException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

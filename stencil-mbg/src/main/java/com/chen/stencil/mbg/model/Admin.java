@@ -1,18 +1,15 @@
 package com.chen.stencil.mbg.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -20,11 +17,12 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author chen
- * @since 2020-08-20
+ * @since 2021-10-14
  */
-@Data
-@EqualsAndHashCode(callSuper = false)
-@ApiModel(value="Admin对象", description="后台用户表")
+@Getter
+@Setter
+@TableName("admin")
+@ApiModel(value = "Admin对象", description = "后台用户表")
 public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -32,33 +30,38 @@ public class Admin implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    @TableField("username")
     private String username;
 
+    @TableField("password")
     private String password;
 
-    @ApiModelProperty(value = "头像")
+    @ApiModelProperty("头像")
+    @TableField("icon")
     private String icon;
 
-    @ApiModelProperty(value = "邮箱")
+    @ApiModelProperty("邮箱")
+    @TableField("email")
     private String email;
 
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty("昵称")
+    @TableField("nick_name")
     private String nickName;
 
-    @ApiModelProperty(value = "备注信息")
+    @ApiModelProperty("备注信息")
+    @TableField("note")
     private String note;
 
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty("创建时间")
+    @TableField("create_time")
     private LocalDateTime createTime;
 
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @ApiModelProperty(value = "最后登录时间")
+    @ApiModelProperty("最后登录时间")
+    @TableField("login_time")
     private LocalDateTime loginTime;
 
-    @ApiModelProperty(value = "帐号启用状态：0->禁用；1->启用")
+    @ApiModelProperty("帐号启用状态：0->禁用；1->启用")
+    @TableField("status")
     private Integer status;
 
 

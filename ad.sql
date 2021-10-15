@@ -11,7 +11,7 @@
  Target Server Version : 100420
  File Encoding         : 65001
 
- Date: 12/10/2021 16:53:06
+ Date: 15/10/2021 16:19:29
 */
 
 SET NAMES utf8mb4;
@@ -45,7 +45,7 @@ INSERT INTO `admin` VALUES (1, '62786084', '$2a$10$rQWNW3GUlIEZtnfYzU53O.rVhl7dp
 -- ----------------------------
 DROP TABLE IF EXISTS `merchant`;
 CREATE TABLE `merchant`  (
-  `id` bigint(20) NOT NULL,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `icon` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
@@ -54,12 +54,14 @@ CREATE TABLE `merchant`  (
   `create_time` timestamp(0) NULL DEFAULT NULL,
   `login_time` timestamp(0) NULL DEFAULT NULL,
   `status` int(1) NULL DEFAULT NULL,
+  `invite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of merchant
 -- ----------------------------
+INSERT INTO `merchant` VALUES (1, '13968782968', '$2a$10$SRgLATjNvw3z3KiOWGVycuMlkOMJUHQt1fiM7QBojC7xhlcYtVjXy', NULL, NULL, NULL, '2021-10-15 16:18:13', NULL, 1, '123');
 
 -- ----------------------------
 -- Table structure for shop
@@ -87,7 +89,7 @@ CREATE TABLE `shop`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `id` int(11) NOT NULL COMMENT '用户id',
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '用户名',
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '邮箱',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '密码',
@@ -95,13 +97,12 @@ CREATE TABLE `users`  (
   `create_time` timestamp(0) NULL DEFAULT NULL COMMENT '创建时间',
   `status` int(1) NULL DEFAULT NULL COMMENT '帐号启用状态：0->禁用；1->启用',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '会员表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '会员表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (1, '123456', '', '$2a$10$8phGvWZFMCHlzi4N4ygSseAOwinYPsq0o1Ot5/rqj9mpOKbaygDeS', NULL, '2020-07-11 14:37:27', 1);
-INSERT INTO `users` VALUES (2, '', '', '$2a$10$XIlov1kESsXnC.vkIjTig.metqxhH/zGM68yxein7wBvXG10BnkH6', 123213, '2020-07-13 16:08:50', 1);
 
 -- ----------------------------
 -- Table structure for users_platform

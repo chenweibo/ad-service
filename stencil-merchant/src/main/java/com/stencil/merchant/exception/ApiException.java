@@ -1,4 +1,4 @@
-package com.chen.stencil.common.exception;
+package com.stencil.merchant.exception;
 
 
 import com.chen.stencil.common.response.IErrorCode;

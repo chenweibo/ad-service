@@ -31,7 +31,7 @@
         <stencil-common.version>0.0.1-SNAPSHOT</stencil-common.version>
         <stencil-security.version>0.0.1-SNAPSHOT</stencil-security.version>
         <stencil-mbg.version>0.0.1-SNAPSHOT</stencil-mbg.version>
-        <hutool.version>4.5.7</hutool.version>
+        <hutool.version>5.7.14</hutool.version>
         <jjwt.version>0.9.1</jjwt.version>
         <aliyun-oss.version>2.5.0</aliyun-oss.version>
         <druid.version>1.1.10</druid.version>
@@ -104,11 +104,11 @@
             </dependency>
 
             <!-- 工具集 -->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
+                <dependency>
+                    <groupId>cn.hutool</groupId>
+                    <artifactId>hutool-all</artifactId>
+                    <version>${hutool.version}</version>
+                </dependency>
             <!-- swagger 文档 -->
             <dependency>
                 <groupId>io.springfox</groupId>
