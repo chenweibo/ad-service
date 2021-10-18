@@ -1,10 +1,13 @@
 package com.chen.stencil.mbg;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.TemplateType;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.baomidou.mybatisplus.generator.fill.Column;
+import com.baomidou.mybatisplus.generator.fill.Property;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,8 +17,9 @@ public class NewCodeGenerator {
 
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
-        tables.add("merchant");
         //tables.add("merchant");
+        //tables.add("merchant");
+        tables.add("shop");
 
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/ad", "root", "")
                 .globalConfig(builder -> {
@@ -38,7 +42,6 @@ public class NewCodeGenerator {
                     builder.addInclude(tables)
                             .entityBuilder()
                             .enableLombok()
-                            .logicDeleteColumnName("deleted")
                             .enableTableFieldAnnotation()
                             .controllerBuilder()
                             .formatFileName("%sController")

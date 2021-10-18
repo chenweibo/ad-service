@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.stencil.mbg.mapper.ShopMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.chen.stencil.mbg.model.Shop">
+        <id column="id" property="id" />
+        <result column="shop_type" property="shopType" />
+        <result column="taobao_name" property="taobaoName" />
+        <result column="taobao_leader" property="taobaoLeader" />
+        <result column="shop_img" property="shopImg" />
+        <result column="is_check" property="isCheck" />
+        <result column="note" property="note" />
+        <result column="shop_telephone" property="shopTelephone" />
+        <result column="created_time" property="createdTime" />
+        <result column="merchant_id" property="merchantId" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, shop_type, taobao_name, taobao_leader, shop_img, is_check, note, shop_telephone, created_time, merchant_id, updated_time
+    </sql>
+
+</mapper>
