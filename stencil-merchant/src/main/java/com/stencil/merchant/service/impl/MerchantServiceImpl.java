@@ -22,6 +22,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
@@ -78,7 +79,7 @@ public class MerchantServiceImpl extends ServiceImpl<MerchantMapper, Merchant> i
         createAdmin.setPassword(passwordEncoder.encode(password));
         createAdmin.setCreateTime(LocalDateTime.now());
         createAdmin.setInvite(code);
-
+        createAdmin.setMomey(BigDecimal.valueOf(0));
         createAdmin.setStatus(1);
         merchantMapper.insert(createAdmin);
 

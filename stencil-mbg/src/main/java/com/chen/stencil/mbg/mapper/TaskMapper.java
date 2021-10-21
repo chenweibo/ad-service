@@ -1,6 +1,6 @@
 package com.chen.stencil.mbg.mapper;
 
-import com.chen.stencil.mbg.model.Merchant;
+import com.chen.stencil.mbg.model.Task;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author chen
- * @since 2021-10-19
+ * @since 2021-10-21
  */
 @Mapper
-public interface MerchantMapper extends BaseMapper<Merchant> {
+public interface TaskMapper extends BaseMapper<Task> {
 
 }

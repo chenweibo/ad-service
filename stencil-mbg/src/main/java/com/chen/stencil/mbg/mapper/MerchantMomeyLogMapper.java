@@ -1,6 +1,6 @@
 package com.chen.stencil.mbg.mapper;
 
-import com.chen.stencil.mbg.model.Merchant;
+import com.chen.stencil.mbg.model.MerchantMomeyLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2021-10-19
  */
 @Mapper
-public interface MerchantMapper extends BaseMapper<Merchant> {
+public interface MerchantMomeyLogMapper extends BaseMapper<MerchantMomeyLog> {
 
 }

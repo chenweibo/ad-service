@@ -18,8 +18,8 @@ public class NewCodeGenerator {
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
         //tables.add("merchant");
-        //tables.add("merchant");
-        tables.add("shop");
+        tables.add("task");
+        //tables.add("shop");
 
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/ad", "root", "")
                 .globalConfig(builder -> {
@@ -43,6 +43,8 @@ public class NewCodeGenerator {
                             .entityBuilder()
                             .enableLombok()
                             .enableTableFieldAnnotation()
+                            .versionColumnName("version")
+                            .versionPropertyName("version")
                             .controllerBuilder()
                             .formatFileName("%sController")
                             .enableRestStyle()
@@ -56,9 +58,9 @@ public class NewCodeGenerator {
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .templateConfig(builder -> {
-                    builder.disable(TemplateType.CONTROLLER)
-                            .disable(TemplateType.SERVICE)
-                            .disable(TemplateType.SERVICEIMPL);
+                    builder.disable(TemplateType.CONTROLLER);
+//                            .disable(TemplateType.SERVICE)
+//                            .disable(TemplateType.SERVICEIMPL);
                 })
                 .execute();
     }

@@ -22,44 +22,45 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("merchant")
-@ApiModel(value = "Merchant对象", description = "")
-public class Merchant implements Serializable {
+@TableName("merchant_momey_log")
+@ApiModel(value = "MerchantMomeyLog对象", description = "")
+public class MerchantMomeyLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @TableField("username")
-    private String username;
+    @TableField("merchant_id")
+    private Integer merchantId;
 
-    @TableField("password")
-    private String password;
+    @TableField("pay")
+    private BigDecimal pay;
 
-    @TableField("icon")
-    private String icon;
-
-    @TableField("email")
-    private String email;
-
-    @TableField("nick_name")
-    private String nickName;
+    @TableField("current_momey")
+    private BigDecimal currentMomey;
 
     @TableField("create_time")
     private LocalDateTime createTime;
 
-    @TableField("login_time")
-    private LocalDateTime loginTime;
+    @ApiModelProperty("0为减1为加")
+    @TableField("plus_minus")
+    private Integer plusMinus;
 
-    @TableField("status")
-    private Integer status;
+    @TableField("note")
+    private String note;
 
-    @TableField("invite")
-    private String invite;
+    @TableField("shop_id")
+    private Integer shopId;
 
-    @TableField("momey")
-    private BigDecimal momey;
+    @TableField("order_id")
+    private Integer orderId;
+
+    @TableField("task_id")
+    private Integer taskId;
+
+    @TableField("shop_name")
+    private String shopName;
 
 
 }

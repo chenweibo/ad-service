@@ -70,6 +70,7 @@ public class MerchantController {
             return CommonResult.unauthorized(null);
         }
         Merchant admin = merchantService.getCurrentAdmin();
+        admin.setPassword("");
         return CommonResult.success(admin);
     }
 

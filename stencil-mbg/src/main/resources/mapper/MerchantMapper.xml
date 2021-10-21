@@ -14,11 +14,12 @@
         <result column="login_time" property="loginTime" />
         <result column="status" property="status" />
         <result column="invite" property="invite" />
+        <result column="momey" property="momey" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, username, password, icon, email, nick_name, create_time, login_time, status, invite
+        id, username, password, icon, email, nick_name, create_time, login_time, status, invite, momey
     </sql>
 
 </mapper>
