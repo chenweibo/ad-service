@@ -19,7 +19,7 @@ import lombok.Setter;
  * </p>
  *
  * @author chen
- * @since 2021-10-21
+ * @since 2021-10-22
  */
 @Getter
 @Setter
@@ -66,7 +66,7 @@ public class Task implements Serializable {
     private String startTime;
 
     @TableField("end_time")
-        private String endTime;
+    private String endTime;
 
     @TableField("run_type")
     private Integer runType;
@@ -92,6 +92,9 @@ public class Task implements Serializable {
     @TableField("version")
     @Version
     private Integer version;
+
+    @TableField("total")
+    private Integer total;
 
 
 }

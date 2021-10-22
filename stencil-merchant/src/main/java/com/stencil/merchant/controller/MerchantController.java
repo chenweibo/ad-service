@@ -93,5 +93,4 @@ public class MerchantController {
         return CommonResult.success(null, "密码修改成功");
     }
 
-
 }

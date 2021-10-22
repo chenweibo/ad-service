@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author chen
- * @since 2021-10-19
+ * @since 2021-10-22
  */
 @Mapper
 public interface MerchantMapper extends BaseMapper<Merchant> {

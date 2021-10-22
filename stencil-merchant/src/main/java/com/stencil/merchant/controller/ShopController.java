@@ -44,6 +44,21 @@ public class ShopController {
         return CommonResult.success(shopService.page(page,queryWrapper));
     }
 
+    @ApiOperation(value = "")
+    @RequestMapping(value = "/myshop", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getMyShop() {
+
+        Merchant merchant = merchantService.getCurrentAdmin();
+
+        QueryWrapper<Shop> queryWrapper = new QueryWrapper();
+        queryWrapper.eq("merchant_id",merchant.getId()).eq("is_check",1);
+
+        return CommonResult.success(shopService.list(queryWrapper));
+    }
+
+
+
     @ApiOperation("创建店铺")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody

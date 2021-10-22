@@ -17,7 +17,7 @@ public class NewCodeGenerator {
 
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
-        //tables.add("merchant");
+        tables.add("merchant");
         tables.add("task");
         //tables.add("shop");
 

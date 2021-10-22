@@ -11,7 +11,7 @@
  Target Server Version : 100420
  File Encoding         : 65001
 
- Date: 21/10/2021 16:59:37
+ Date: 22/10/2021 16:47:22
 */
 
 SET NAMES utf8mb4;
@@ -56,13 +56,14 @@ CREATE TABLE `merchant`  (
   `status` int(1) NULL DEFAULT NULL,
   `invite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `momey` decimal(10, 2) NOT NULL DEFAULT 0,
+  `is_back` int(5) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of merchant
 -- ----------------------------
-INSERT INTO `merchant` VALUES (1, '13968782968', '$2a$10$SRgLATjNvw3z3KiOWGVycuMlkOMJUHQt1fiM7QBojC7xhlcYtVjXy', NULL, NULL, NULL, '2021-10-15 16:18:13', NULL, 1, '123', 2.10);
+INSERT INTO `merchant` VALUES (1, '13968782968', '$2a$10$SRgLATjNvw3z3KiOWGVycuMlkOMJUHQt1fiM7QBojC7xhlcYtVjXy', NULL, NULL, NULL, '2021-10-15 16:18:13', NULL, 1, '123', 2.10, 1);
 
 -- ----------------------------
 -- Table structure for merchant_momey_log
@@ -110,7 +111,7 @@ CREATE TABLE `shop`  (
 -- ----------------------------
 -- Records of shop
 -- ----------------------------
-INSERT INTO `shop` VALUES (2147483651, 1, '13zzz', '1', 'http://127.0.0.1:9000/yangmao/merchant/54ae093321ac47f3956a62716dfc1549/二维码图片_10月11日15时40分09秒.png', 0, NULL, '13968782968', '2021-10-19 10:07:38', 1, '2021-10-19 10:18:34');
+INSERT INTO `shop` VALUES (2147483651, 1, '13zzz', '1', 'http://127.0.0.1:9000/yangmao/merchant/54ae093321ac47f3956a62716dfc1549/二维码图片_10月11日15时40分09秒.png', 1, NULL, '13968782968', '2021-10-19 10:07:38', 1, '2021-10-19 10:18:34');
 
 -- ----------------------------
 -- Table structure for task
@@ -120,7 +121,7 @@ CREATE TABLE `task`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `shop_id` int(11) NULL DEFAULT NULL,
   `shop_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `task_type` int(10) NULL DEFAULT NULL,
+  `task_type` int(10) UNSIGNED ZEROFILL NULL DEFAULT NULL,
   `back_type` int(10) NULL DEFAULT NULL,
   `task_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   `product_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
@@ -138,6 +139,7 @@ CREATE TABLE `task`  (
   `updated_time` datetime(0) NULL DEFAULT NULL,
   `status` int(5) NULL DEFAULT NULL,
   `version` int(5) NULL DEFAULT NULL,
+  `total` int(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 

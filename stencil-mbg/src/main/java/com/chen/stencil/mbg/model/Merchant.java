@@ -18,7 +18,7 @@ import lombok.Setter;
  * </p>
  *
  * @author chen
- * @since 2021-10-19
+ * @since 2021-10-22
  */
 @Getter
 @Setter
@@ -60,6 +60,9 @@ public class Merchant implements Serializable {
 
     @TableField("momey")
     private BigDecimal momey;
+
+    @TableField("is_back")
+    private Integer isBack;
 
 
 }
