@@ -1,6 +1,5 @@
 package com.stencil.merchant.service;
 
-import com.chen.stencil.mbg.model.Admin;
 import com.chen.stencil.mbg.model.Merchant;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -3,11 +3,13 @@ package com.stencil.merchant.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chen.stencil.mbg.mapper.TaskMapper;
 import com.chen.stencil.mbg.model.Task;
-import com.stencil.merchant.domain.MyPage;
 import com.stencil.merchant.dto.TaskParams;
 import com.stencil.merchant.service.ITaskService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -26,6 +28,14 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     public void CreateTask(TaskParams taskParams){
+
+        Task task = new Task();
+        BeanUtils.copyProperties(taskParams,task);
+
+        task.setCreatedTime(LocalDateTime.now());
+        task.setStatus(0);
+
+        taskMapper.insert(task);
 
     }
 }

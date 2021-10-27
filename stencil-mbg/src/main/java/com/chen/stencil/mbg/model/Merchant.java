@@ -64,5 +64,4 @@ public class Merchant implements Serializable {
     @TableField("is_back")
     private Integer isBack;
 
-
 }

@@ -2,7 +2,6 @@ package com.stencil.merchant.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.chen.stencil.common.response.CommonResult;
 import com.chen.stencil.mbg.model.Merchant;
 import com.chen.stencil.mbg.model.Shop;
@@ -10,7 +9,6 @@ import com.stencil.merchant.domain.MyPage;
 import com.stencil.merchant.dto.CreateShopParam;
 import com.stencil.merchant.service.impl.MerchantServiceImpl;
 import com.stencil.merchant.service.impl.ShopServiceImpl;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
